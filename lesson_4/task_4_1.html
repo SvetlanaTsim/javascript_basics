@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+        1
+        (это задание делайте по желанию) Написать функцию, преобразующую число в объект. Передавая на
+        вход число в диапазоне [0, 999],
+        мы должны получить на выходе объект, в котором в соответствующих свойствах описаны разряды числа:
+        - единицы (в свойстве units)
+        - десятки (в свойстве tens)
+        - сотни (в свойстве hundereds)
+        Например, для числа 45 мы должны получить следующий объект:
+        {
+        units: 5, //это единицы
+        tens: 4, //это десятки
+        hundreds: 0, //это сотни
+        }
+        Если число было передано вне [0, 999] диапазона, не целое число или вообще не число,
+        необходимо выдать соответствующее сообщение с помощью console.log и вернуть пустой объект.
+        */
+        "use strict";
+
+        class NumObj {
+            constructor(num) {
+                this.num = num;
+            }
+
+            get check() {
+                if (isNaN(+this.num) === false) {
+                    if (Number.isInteger(this.num) && (this.num >= 0 && this.num <= 999)) {
+                        return true;
+                    }
+                    return false;
+                }
+                return false;
+            }
+
+            get_object() {
+                let result = {};
+                if (this.check === true) {
+                    let objNum = this.num;
+                    let arr = ['units', 'tens', 'hundreds'];
+                    for (let value of arr) {
+                        result[value] = objNum % 10;
+                        objNum = parseInt(objNum / 10);
+                    }
+                    return result;
+                }
+                console.log('Неверные данные');
+                return result;
+            }
+        }
+
+        // проверка
+        let num1 = new NumObj(945);
+        console.log(num1.check);
+        console.log(num1.get_object());
+
+        let num2 = new NumObj(-945);
+        console.log(num2.check);
+        console.log(num2.get_object());
+
+        let num3 = new NumObj(123);
+        console.log(num3.check);
+        console.log(num3.get_object());
+
+        let num4 = new NumObj('asfs');
+        console.log(num4.check);
+        console.log(num4.get_object());
+
+        let num5 = new NumObj(12.6);
+        console.log(num5.check);
+        console.log(num5.get_object());
+
+        let num6 = new NumObj(0);
+        console.log(num6.check);
+        console.log(num6.get_object());
+
+    </script>
+</body>
+
+</html>
