@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 4 Реализовать основные 4 арифметические операции (+, -, /, *) в виде функций с двумя
+параметрами. Т.е. например, функция для сложения должна принимать два числа, складывать их
+и возвращать результат.
+Обязательно использовать оператор return.*/
+        "use strict";
+
+        /**
+         * Эта функция находит сумму параметров
+         * @param {number} num1 - первое число
+         * @param {number} num2 - второе число
+         * @returns {number} - сумма чисел
+         */
+        function sum(num1, num2) {
+            return num1 + num2;
+        }
+
+        /**
+         * Эта функция находит разность параметров
+         * @param {number} num1 - первое число
+         * @param {number} num2 - второе число
+         * @returns {number} - разность чисел
+         */
+        function difference(num1, num2) {
+            return num1 - num2;
+        }
+
+        /**
+         * Эта функция делит первый параметр на второй
+         * @param {number} num1 - первое число
+         * @param {number} num2 - второе число
+         * @returns {number} - результат деления
+         */
+        function division(num1, num2) {
+            return num1 / num2;
+        }
+
+        /**
+         * Эта функция находит произведение параметров
+         * @param {number} num1 - первое число
+         * @param {number} num2 - второе число
+         * @returns {number} - произведение чисел
+         */
+        function multiplication(num1, num2) {
+            return num1 * num2;
+        }
+
+        let a = sum(12, 2);
+        let b = difference(12, 2);
+        let c = division(12, 2);
+        let d = multiplication(12, 2);
+
+        console.log(a, b, c, d)
+
+    </script>
+    <script src="task_2_5.js"></script>
+</body>
+
+</html>
